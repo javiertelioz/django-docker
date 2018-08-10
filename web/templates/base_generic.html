@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <title>{% block title %}Django | Docker{% endblock %}</title>
+
+    <link rel="icon" href="favicon.ico">
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dist/css/main.css' %}">
+  </head>
+  <body>
+    {% include "partials/header.html" %}
+    <main role="main" class="container">
+      {% block content %}{% endblock %}
+    </main>
+    {% include "partials/footer.html" %}
+    <!-- Add additional Js in static file -->
+    <script src="{% static 'dist/js/jquery.min.js' %}"></script>
+    <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'dist/js/main.js' %}"></script>
+  </body>
+</html>

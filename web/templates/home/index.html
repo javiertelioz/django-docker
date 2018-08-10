@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  <h1>Django Docker</h1>
+  <p>Welcome a website developed by <em>Django Docker</em> <i class="fas fa-address-book"></i> !</p>
+  <p><a href="https://twitter.com/jokerume" target="_blank">@jokerume</a></p>
+  <p><a href="https://twitter.com/jtelio118" target="_blank">@jtelio118</a></p>
+  {% if user.is_authenticated %}
+      Hi {{ user.username }}! <p><a href="{% url 'logout' %}">logout</a></p>
+  {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}" class="btn btn-primary">Login <i class="fab fa-500px"></i></a>
+  {% endif %}
+{% endblock %}
